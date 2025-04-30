@@ -5,7 +5,7 @@ class Node {
     this.left = null;
     this.right = null;
     // Adding a count for dulplicates
-    this.count = 0;
+    this.count = 1;
   }
 }
 
@@ -47,24 +47,21 @@ class BinarySearchTree {
     }
     return this;
   }
-  //   search(value) {
-  //     // if there is a root or not
-  //     if (!this.root) return undefined;
-  //     else {
-  //       let currentNode = this.root;
-
-  //       //while currentNode is not null
-  //       while (currentNode) {
-  //         if (currentNode.value === value) return currentNode;
-  //         if (currentNode.value > value) {
-  //           currentNode = currentNode.left;
-  //         } else {
-  //           currentNode = currentNode.right;
-  //         }
-  //       }
-  //       return undefined;
-  //     }
-  //   }
+  search(value) {
+    // if empty tree
+    if (!this.root) return undefined;
+    let currentNode = this.root;
+    while (true) {
+      if (currentNode.value === value) break;
+      if (currentNode.value < value) {
+        currentNode = currentNode.right;
+      } else {
+        currentNode = currentNode.left;
+      }
+      if (!currentNode) return undefined;
+    }
+    return currentNode;
+  }
 }
 
 module.exports = BinarySearchTree;
