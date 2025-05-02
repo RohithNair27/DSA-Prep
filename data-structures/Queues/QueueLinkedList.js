@@ -39,12 +39,3 @@ class Queue {
     return dequeuedElement;
   }
 }
-
-let q = new Queue();
-// FIFO
-q.enqueue(10);
-q.enqueue(20);
-q.enqueue(30);
-console.log(q);
-q.dequeue();
-console.log(q);
